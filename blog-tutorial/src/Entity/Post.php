@@ -42,6 +42,7 @@ class Post
     {
         $this->publishedAt = new \DateTime();
     }
+    
 
     public function getId(): ?int
     {
