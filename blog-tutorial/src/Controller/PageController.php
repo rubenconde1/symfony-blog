@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Category;
 use App\Form\ContactFormType;
 use Doctrine\Persistence\ManagerRegistry;
 
