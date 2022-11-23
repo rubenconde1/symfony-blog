@@ -1,0 +1,34 @@
+<!-- Navbar Start -->
+                <div class="container p-0">
+                    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+                        <a href="" class="navbar-brand d-block d-lg-none">Navigation</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="navbar-nav m-auto">
+                                <li class="{{ (app.request.attributes.get('_route') == 'index')  ? 'active': ''}} lien">
+                                <a href="{{ path('index') }}"><i class="fa fa-home sr-icons"></i>Home</a>
+                                </li>
+                                <li class="{{ (app.request.attributes.get('_route') == 'about')  ? 'active': ''}} lien">
+                                <a href="{{ path('about') }}"><i class="fa fa-bookmark sr-icons"></i>About</a>
+                                </li>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                    <div class="dropdown-menu">
+                                        <li class="{{ (app.request.attributes.get('_route') == 'blog')  ? 'active': ''}} lien">
+                                        <a href="{{ path('blog') }}">Blog</a>
+                                        </li>
+                                        <li class="{{ (app.request.attributes.get('_route') == 'single')  ? 'active': ''}} lien">
+                                        <a href="{{ path('single') }}">Single</a>
+                                        </li>
+                                    </div>
+                                </div>
+                                <li class="{{ (app.request.attributes.get('_route') == 'contact' or app.request.attributes.get('_route') == '`single_post`')  ? 'active': ''}} lien">
+                                <a href="{{ path('contact') }}">Contact</a>
+                                </li>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- Navbar End -->
