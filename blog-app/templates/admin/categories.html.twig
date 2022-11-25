@@ -6,7 +6,29 @@
    	  <div class="container">
    	    <div class="col-xs-12 col-sm-8 col-sm-push-2">
        	   <h1>Categories</h1>
+		   {{ form(form, {'attr': {'class':'FALTA AÑADIR ESTILO'}}) }}
        	   <hr class='divider'>
+		   <hr class="divider">
+			<div>
+				<table class="table">
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Name</th>
+					</tr>
+					</thead>
+					<tbody>
+					{% for category in categories %}
+					<tr>
+						<th scope="row">{{ category.id }}</th>
+						<td>
+							{{ category.name }}
+						</td>
+					</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
        	</div>   
    	  </div>
    </div>

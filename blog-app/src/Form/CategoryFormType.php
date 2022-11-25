@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CategoryFormType extends AbstractType
@@ -13,6 +14,7 @@ class CategoryFormType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('Send', SubmitType::class, ['attr' => ['class'=>'btn btn-primary']]);
         ;
     }
 
