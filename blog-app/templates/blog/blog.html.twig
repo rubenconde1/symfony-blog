@@ -22,6 +22,37 @@
                 
                 <!-- Blog List Start -->
                 <div class="container bg-white pt-5">
+                {% for post in posts.results %}
+                {{ include ('partials/_post.html.twig', {'post': post}) }}
+                {% endfor %}
+                {% if posts.hasToPaginate %}
+    <div class="text-left">
+        <ul class="pagination">
+            {% if posts.hasPreviousPage %}
+                <li class="prev"><a href="{{ path('blog', {page: posts.previousPage}) }}" rel="previous"><i class="fa fw fa-long-arrow-left"></i> Previous</a></li>
+            {% else %}
+                <li class="prev disabled"><span><i class="fa fw fa-arrow-left"></i> Previous </span></li>
+            {% endif %}
+
+            {% for i in 1..posts.lastPage %}
+                {% if i == posts.currentPage %}
+                    <li class="active"><span>{{ i }}</span></li>
+                {% else %}
+                    <li><a href="{{ path('blog', {page: i}) }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if posts.hasNextPage %}
+                <li class="next"><a href="{{ path('blog', {page: posts.nextPage}) }}" rel="next">Next <i class="fa fw fa-arrow-right"></i></a></li>
+            {% else %}
+                <li class="next disabled"><span>Next <i class="fa fw fa-arrow-right"></i></span></li>
+            {% endif %}
+        </ul>
+    </div>
+    {% endif %}
+
+
+
                     <div class="row blog-item px-3 pb-5">
                         <div class="col-md-5">
                             <img class="img-fluid mb-4 mb-md-0" src="img/blog-1.jpg" alt="Image">
